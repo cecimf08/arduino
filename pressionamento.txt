@@ -1,30 +1,37 @@
-﻿Contagem de pressionamentos de botão
 const int buttonPin = 2;
-const int ledPin = LED_BUILTIN;
-//counter for the number of button presses
+const int ledPin = LED_BUILTIN; // LED embutido
+
+// contador para o número de pressionamentos do botão
 int buttonPushCounter = 0;
-//current state of the button
+// estado atual do botão
 int buttonState = 0;
-//previous state of the button
+// estado anterior do botão
 int lastButtonState = 0;
-void setup) {
-pinMode (buttonPin, INPUT); pinMode (ledPin, OUTPUT);
-Serial. begin (9600);
-｝
+
+void setup() {
+  pinMode(buttonPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
 void loop() {
-// read the pushbutton input pin:
-buttonState = digitalRead (buttonPin);
-if (buttonState != lastButtonState) {
-if (buttonState == HIGH) {
-buttonPushCounter++:
-Serial-print ln("on");
-Serial.print ln("number of button pushes:2);
-Serial-print ln(buttonPushCounter);
-} else {
-Serial-println("off");
-｝
-delay (50) ;
-｝
-// save state
-lastButtonState = buttonState;
-｝
+  // lê o pino de entrada do botão
+  buttonState = digitalRead(buttonPin);
+  
+  // verifica se o estado do botão mudou
+  if (buttonState != lastButtonState) {
+    if (buttonState == HIGH) {
+      buttonPushCounter++;
+      Serial.println("on");
+      Serial.print("Número de pressionamentos do botão: ");
+      Serial.println(buttonPushCounter);
+    } else {
+      Serial.println("off");
+    }
+    // pequena espera para evitar bouncing
+    delay(50);
+  }
+  
+  // salva o estado atual do botão
+  lastButtonState = buttonState;
+}
