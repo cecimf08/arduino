@@ -1,0 +1,21 @@
+﻿Ligar e desligar o botão com led
+const int buttonPin = 2;
+const int ledPin = 13;
+// variables will change:
+int buttonState = 0;
+void setup() {
+// initialize the LED pin as an output:
+pinMode (ledpin, OUTPUT);
+// initialize the pushbutton pin as an input:
+pinMode(buttonPin, INPUT);
+｝
+void loop() {
+// read the state of the pushbutton value:
+buttonState = digitalRead(buttonPin);
+// check if the pushbutton is pressed. 
+if (buttonState == HIGH) {
+// turn LED on:
+digitalwrite(ledPin, HIGH);
+} else {
+// turn LED off:
+digitalwrite
