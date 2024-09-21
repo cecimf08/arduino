@@ -1,0 +1,18 @@
+// Define o pino onde o LED está conectado
+int ledPin = 13;  // A maioria das placas Arduino já vem com um LED no pino 13
+
+void setup() {
+  // Configura o pino como saída
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  // Liga o LED
+  digitalWrite(ledPin, HIGH);
+  // Aguarda 1 segundo (1000 milissegundos)
+  delay(1000);
+  // Desliga o LED
+  digitalWrite(ledPin, LOW);
+  // Aguarda mais 1 segundo
+  delay(1000);
+}
