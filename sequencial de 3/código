@@ -1,0 +1,31 @@
+// Define os pinos dos LEDs
+int ledPin1 = 8;  // Pino do primeiro LED
+int ledPin2 = 9;  // Pino do segundo LED
+int ledPin3 = 10; // Pino do terceiro LED
+
+void setup() {
+  // Configura os pinos como saída
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+  pinMode(ledPin3, OUTPUT);
+}
+
+void loop() {
+  // Acende o primeiro LED e apaga os outros dois
+  digitalWrite(ledPin1, HIGH);
+  digitalWrite(ledPin2, LOW);
+  digitalWrite(ledPin3, LOW);
+  delay(1000);  // Aguarda 1 segundo
+  
+  // Acende o segundo LED e apaga os outros dois
+  digitalWrite(ledPin1, LOW);
+  digitalWrite(ledPin2, HIGH);
+  digitalWrite(ledPin3, LOW);
+  delay(1000);  // Aguarda 1 segundo
+  
+  // Acende o terceiro LED e apaga os outros dois
+  digitalWrite(ledPin1, LOW);
+  digitalWrite(ledPin2, LOW);
+  digitalWrite(ledPin3, HIGH);
+  delay(1000);  // Aguarda 1 segundo
+}
