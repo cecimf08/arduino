@@ -1,1 +1,0 @@
-O detector de chamas detecta as chamas, soa um apito e acende leds coloridas para avisar sobre as chamas. Ele utiliza um sensor detector de fogo para detectar o fogo, um buzzer para soar o apito e duas leds para o sinal visual.
