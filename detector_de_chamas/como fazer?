@@ -1,0 +1,13 @@
+para fazer um detector de chamas utilizando um arduíno uno, voce vai precisar de:
+*arduino uno
+*sensor detector de chamas
+*protoboard
+*buzzer ativo
+*duas leds (Amarela e Vermelha)
+*dois resistores de 220 ohms
+*cinco cabos macho-macho
+Conecte a entrada vcc do sensor ao 5volts do arduino,a entrada terra do sensor ao gnd do arduino e a entrada D0 ao pino 7 do arduino. 
+Conecte o anodo do buzzer no pino 3 do arduino e o catodo no gnd.
+Contecte os anodos das leds nos pinos 8 e 9 os catodos no gnd uliizando os resistores.
+Digite o código e proto!
+  
