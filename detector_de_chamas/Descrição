@@ -1,0 +1,1 @@
+o detector de chamas utiliza um arduíno uno, um sensor detector de chamas, leds e um buzzer para detectar chamas e alertar sobre elas. Quando as chamas são detectadas, as leds piscam e o buzzer emite um sinal sonoro.
