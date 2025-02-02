@@ -1,28 +1,46 @@
-// Definição dos pinos dos LEDs
-const int ledPin1 = 4;
-const int ledPin2 = 5;
-const int ledPin3 = 6;
+int pino_D0 = 7;
 
-void setup() {
-// Define os pinos dos LEDs como saídas
-pinMode(ledPin1, OUTPUT);
-pinMode(ledPin2, OUTPUT);
-pinMode(ledPin3, OUTPUT);
+int valor_d = 0;
+int buzzerPin = 3;
+int ledPin_1 = 8;
+int ledPin_2 = 9;
+ 
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(pino_D0, INPUT);
+  pinMode(buzzerPin, OUTPUT);
+  pinMode(ledPin_1, OUTPUT);
+  pinMode(ledPin_2, OUTPUT);
 }
-
-void loop() {
-// Acende o primeiro LED e espera 1 segundo
-digitalWrite(ledPin1, HIGH);
-delay(1000);
-digitalWrite(ledPin1, LOW);
-
-// Acende o segundo LED e espera 1 segundo
-digitalWrite(ledPin2, HIGH);
-delay(1000);
-digitalWrite(ledPin2, LOW);
-
-// Acende o terceiro LED e espera 1 segundo
-digitalWrite(ledPin3, HIGH);
-delay(1000);
-digitalWrite(ledPin3, LOW);
+ 
+void loop()
+{
+  int valor_d = digitalRead(pino_D0);
+  Serial.print(" Porta digital: ");
+  Serial.println(valor_d);
+ 
+  if (valor_d != 1)
+  {
+    Serial.println("Fogo detectado !!!");
+  }
+  delay(500);
+  {
+    if (valor_d != 1)
+ { digitalWrite(buzzerPin, HIGH);}
+  
+  else {digitalWrite(buzzerPin, LOW);}
+  }
+  if (valor_d != 1)
+  {digitalWrite (ledPin_1, HIGH);
+  delay(50);
+  digitalWrite (ledPin_1, LOW);
+  delay(50);}
+  else {digitalWrite(ledPin_1, LOW);}
+  if (valor_d != 1)
+   {digitalWrite(ledPin_2, LOW);
+   delay(500);
+   digitalWrite(ledPin_2,HIGH);
+   delay(50);}
+  else  {digitalWrite(ledPin_2, LOW);}
 }
