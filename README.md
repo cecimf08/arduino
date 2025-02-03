@@ -62,40 +62,49 @@ Você precisará dos seguintes componentes eletrônicos:
 
 ## Código  
 
-```cpp
-int pino_D0 = 7; 
+int pino_D0 = 7;
+
 int valor_d = 0;
 int buzzerPin = 3;
 int ledPin_1 = 8;
 int ledPin_2 = 9;
-
-void setup() {
+ 
+void setup()
+{
   Serial.begin(9600);
   pinMode(pino_D0, INPUT);
   pinMode(buzzerPin, OUTPUT);
   pinMode(ledPin_1, OUTPUT);
   pinMode(ledPin_2, OUTPUT);
 }
-
-void loop() {
+ 
+void loop()
+{
   int valor_d = digitalRead(pino_D0);
   Serial.print(" Porta digital: ");
   Serial.println(valor_d);
-
-  if (valor_d != 1) {
+ 
+  if (valor_d != 1)
+  {
     Serial.println("Fogo detectado !!!");
-    digitalWrite(buzzerPin, HIGH);
-    digitalWrite(ledPin_1, HIGH);
-    delay(50);
-    digitalWrite(ledPin_1, LOW);
-    delay(50);
-    digitalWrite(ledPin_2, HIGH);
-    delay(50);
-  } else {
-    digitalWrite(buzzerPin, LOW);
-    digitalWrite(ledPin_1, LOW);
-    digitalWrite(ledPin_2, LOW);
   }
-
   delay(500);
+  {
+    if (valor_d != 1)
+ { digitalWrite(buzzerPin, HIGH);}
+  
+  else {digitalWrite(buzzerPin, LOW);}
+  }
+  if (valor_d != 1)
+  {digitalWrite (ledPin_1, HIGH);
+  delay(50);
+  digitalWrite (ledPin_1, LOW);
+  delay(50);}
+  else {digitalWrite(ledPin_1, LOW);}
+  if (valor_d != 1)
+   {digitalWrite(ledPin_2, LOW);
+   delay(500);
+   digitalWrite(ledPin_2,HIGH);
+   delay(50);}
+  else  {digitalWrite(ledPin_2, LOW);}
 }
