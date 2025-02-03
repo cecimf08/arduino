@@ -1,0 +1,1 @@
+Eu tive problemas com o codigo do buzzer, depois percebi que estava utilizando um buzzer ativo mas um codigo para um buzzer passivo. 
